@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mr. Task</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
+    <link rel="icon" type="image/png" href="fav.png" />
+</head>
+
+<body>
+    <div id="todo">
+        <header>
+            <span id="day">Day,</span> <span id="date">Date</span> <br>
+            <span id="tasksTotal"><span id="tasksTotalN"></span><small> Tasks</small></span>
+            <span id="month">Month</span>
+        </header>
+        <div id="plus" onclick="$('#add-box-cover').fadeIn(500);$('#add-box').fadeIn(500);">+</div>
+        <div id="tasks">
+
+        </div>
+        <h1 id="logo">Daily Task<br> <br>
+            <small><small><small>Loading...!!!</small></small>
+            </small>
+        </h1>
+        <div style="position:absolute; top:120px; width:350px; text-align:center; z-index:1;">
+            No Task...
+        </div>
+        <button id="clear-all" onclick="clrChecked();">Delete Tasks ! </button>
+        <div id="add-box">
+            <div id="loader" style="display: none; width: 100%; height: 100%; background: rgba(0, 0, 0, .0); position: fixed; z-index: 8; top: 0; right: 0; text-align: center;">
+                <img src="load.gif" alt="Loading" style=" width: 20px; margin-top: 150px;">
+            </div>
+
+            <button id="close" onclick="$('#add-box-cover').fadeOut(500);$('#add-box').fadeOut(500);">X</button>
+            <h3>Add</h3>
+            <h2>New Task</h2>
+            <br>
+            <span id="err"></span>
+            <br>
+            <input type="text" id="new-todo" maxlength="35" placeholder="What?" onfocus="document.getElementById('err').innerHTML = ''; this.style.borderBottom = '2px solid rgba(105, 105, 105, .2)';">
+            <small style="text-align:center; display:block;">(Max 35 Character only!)</small>
+            <br>
+            <input type="text" id="new-todo-time" maxlength="10" placeholder="Day OR Date" onfocus="if(this.value == '') {this.value = ''}; document.getElementById('err').innerHTML = ''; this.style.borderBottom = '2px solid rgba(105, 105, 105, .2)';">
+            <button id="adder" onclick="addTodo();">Add!</button>
+        </div>
+        <footer>
+            Designed & Developed by <a href="https://www.facebook.com/profile.php?id=100011449294235" target="_blank">Awais Malik</a>
+        </footer>
+    </div>
+
+    <div id="add-box-cover"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
